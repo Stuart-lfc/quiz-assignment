@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Passed</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Congratulations!</h1>
+        <p>You passed the quiz!</p>
+        <img src="https://media.giphy.com/media/KyYIA8dlA6x6hLGrbn/giphy.gif?cid=790b7611jlt6zn2awz7z1gbrrpwb4mluuaz7qsc4iqdpzc4l&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Congratulations GIF">
+        <br>
+        <p>Your score: <span id="score"></span></p>
+        <button onclick="window.location.href='index.html'">Take Quiz Again</button>
+    </div>
+
+    <script>
+        // Wait until the page is fully loaded
+        window.onload = function() {
+            // Retrieve the score from localStorage
+            var score = localStorage.getItem("score");
+
+            // If there is a score stored in localStorage, display it
+            if (score !== null) {
+                document.getElementById("score").innerText = score + " out of 10";
+            } else {
+                // If score is not available, show a message
+                document.getElementById("score").innerText = "Score not available.";
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #dff0d8; /* Light green background */
+        }
+        h1 {
+            color: #4CAF50; /* Dark green text */
+            font-size: 3em;
+            margin-top: 50px;
+        }
+        .content {
+            padding: 20px;
+        }
+        img {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+        .retry-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        .retry-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+    
+</body>
+</html>

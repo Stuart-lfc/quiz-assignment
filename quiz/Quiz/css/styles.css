@@ -1,0 +1,226 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #4b0082, #00b7eb);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-size: 100% 200%;
+    animation: gradientMove 5s ease infinite;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.login-box {
+    background: #40c4ff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    display: none; /* Initially hidden, shown by JavaScript */
+}
+
+.login-box h2 {
+    margin: 0 0 20px;
+    color: black;
+}
+
+.login-box input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-box button {
+    background: white;
+    border: 2px solid black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.login-box button:hover {
+    background: #f0f0f0;
+}
+
+.emoji-container {
+    position: relative;
+}
+
+.emoji {
+    width: 100px;
+    height: 100px;
+}
+
+.speech-bubble {
+    position: absolute;
+    background: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    font-size: 14px;
+    color: black;
+    top: -80px;
+    left: 120px;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+}
+
+/* Animations for the speech bubble */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Spin animation for the login form */
+@keyframes spin {
+    0% {
+        opacity: 0;
+        transform: rotateY(0deg) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(360deg) scale(1);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.card {
+    width: 300px;
+    height: 220px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 30px;
+    gap: 13px;
+    position: fixed;         
+    bottom: 20px;            
+    left: 20px;             
+    z-index: 1000;           
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+  
+  #cookieSvg {
+    width: 50px;
+  }
+  
+  #cookieSvg g path {
+    fill: #00b7eb;
+  }
+  
+  .cookieHeading {
+    font-size: 1.2em;
+    font-weight: 800;
+    color: rgb(255, 0, 0);
+  }
+  
+  .cookieDescription {
+    text-align: center;
+    font-size: 0.7em;
+    font-weight: 600;
+    color: rgb(255, 0, 0);
+  }
+  
+  .buttonContainer {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+  }
+  
+  .acceptButton {
+    width: 80px;
+    height: 30px;
+    background-color: #4b0082;
+    transition-duration: .2s;
+    border: none;
+    color: rgb(241, 241, 241);
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 20px;
+  }
+  
+  .declineButton {
+    width: 80px;
+    height: 30px;
+    background-color:#00b7eb;
+    transition-duration: .2s;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 20px;
+  }
+  
+  .declineButton:hover {
+    background-color: #004aeb;
+    transition-duration: .2s;
+  }
+  
+  .acceptButton:hover {
+    background-color: #9173ff;
+    transition-duration: .2s;
+  }
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .login-box {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .speech-bubble {
+        width: 150px;
+        font-size: 12px;
+        left: 80px;
+        top: -60px;
+    }
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+ .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: rgb(0, 255, 55);
+            opacity: 0.8;
+            animation: confettiFall 3s linear infinite;
+            border-radius: 50%;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-400px) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+  /* Animation for the heading */
+  @keyframes scaleGlow {
+            0% {
+                transform: scale(1);
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+            }
+            50% {
+                transform: scale(1.2);
+                text-shadow: 0 0 10px #ff0, 0 0 20px #ff0;
+            }
+            100% {
+                transform: scale(1);
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+            }
+        }
+
+        /* Animation for the emoji */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .result-container h1 {
+            animation: scaleGlow 2s ease-in-out infinite;
+            color: #4CAF50; /* Green color for success */
+        }
+
+        .emoji {
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+    </style>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass Page</title>
+    <link rel="stylesheet" href="/css/pass-fail.css">
+</head>
+<body>
+    <div class="result-container">
+        <h1>Well Done! You Passed!!</h1>
+        <img src="/pictures/thumbsup.png" alt="Thumbs Up Emoji" class="emoji">
+        <button class="back-to-menu" onclick="window.location.href='menu.html'">Back to Menu</button>
+    </div>
+
+    <script>
+        function launchConfetti() {
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement("div");
+                confetti.classList.add("confetti");
+    
+                confetti.style.left = Math.random() * 100 + "vw"; // Random horizontal position
+                confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`; // Random color
+    
+                // Randomize the animation duration for each confetti piece
+                confetti.style.animationDuration = (Math.random() * 2 + 2) + "s"; 
+                document.body.appendChild(confetti);
+    
+                // Remove confetti after the animation ends (4 seconds here)
+                setTimeout(() => confetti.remove(), 4000);
+            }
+        }
+    
+        // Call launchConfetti every 200ms to generate a continuous stream of confetti
+        setInterval(launchConfetti, 200); // This will create an infinite loop
+    
+        // Trigger confetti right after the page loads
+        window.onload = () => {
+            launchConfetti();
+        };
+    </script>
+    
+</body>
+</html>

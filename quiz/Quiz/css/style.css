@@ -1,0 +1,167 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #00c4ff, #800080);
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+/* Login Page Styles */
+.emoji {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.speech-bubble {
+    position: relative;
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 0 auto 20px;
+    width: 300px;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 10px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.login-form {
+    background: #87ceeb;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    margin: 0 auto;
+    opacity: 0;
+    display: none;
+}
+
+.login-form h2 {
+    margin: 0 0 20px;
+    color: #333;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); opacity: 0; }
+    100% { transform: rotate(360deg); opacity: 1; }
+}
+
+/* Menu Page Styles */
+#welcomeMessage {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.arrow {
+    font-size: 30px;
+    color: #fff;
+    display: inline-block;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.card {
+    display: inline-block;
+    width: 150px;
+    height: 200px;
+    background: #87ceeb;
+    margin: 0 10px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-label {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .container {
+        text-align: center;
+        width: 100%;
+    }
+
+    .speech-bubble {
+        width: 80%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .login-form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .card {
+        width: 120px;
+        height: 160px;
+    }
+
+    .arrow {
+        margin: 10px;
+        font-size: 24px;
+    }
+}

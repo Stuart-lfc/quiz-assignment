@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.wrapper{
+    height:100vh;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+}
+section.content{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #C2EABA;
+    width:30%;
+    height:45%;
+    border: 4px solid #E6EFE9;
+}
+section input{
+    padding:5px;
+    width:95%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+section label{
+    width:95%;
+    text-align:left;
+}
+button{
+    width:65%;
+    padding:2px;
+    margin-bottom: 10px;
+}
+#feedback{
+    height:45px;
+    width:250px;
+    text-align: center;
+}

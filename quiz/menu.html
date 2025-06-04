@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Selection</title>
+    <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+    <div class="header">
+        <div class="welcome" id="welcomeMessage">Hey, welcome to the quiz! Please select a quiz.</div>
+        <div class="clock" id="clock">00:00:00 AM</div>
+        <button id="toggleClock" class="toggle-btn">Hide Clock</button>
+    </div>
+
+    <div class="quiz-container">
+        <div class="quiz-box" onclick="window.location.href='flags.html'">
+            <div class="score-circle" id="quiz1-circle"></div>
+            <img src="/pictures/flags.png" alt="Flags Quiz Image" class="image-placeholder">
+            <div class="quiz-label">Flags</div>
+        </div>
+        <div class="quiz-box" onclick="window.location.href='maths.html'">
+            <div class="score-circle" id="quiz2-circle"></div>
+            <img src="/pictures/Maths.jpg" alt="Maths Quiz Image" class="image-placeholder">
+            <div class="quiz-label">Maths</div>
+        </div>
+        <div class="quiz-box" onclick="window.location.href='english.html'">
+            <div class="score-circle" id="quiz3-circle"></div>
+            <img src="/pictures/english.jpg" alt="English Quiz Image" class="image-placeholder">
+            <div class="quiz-label">English</div>
+        </div>
+        <div class="quiz-box" onclick="window.location.href='geography.html'">
+            <div class="score-circle" id="quiz4-circle"></div>
+            <img src="/pictures/geography.jpg" alt="Geography Quiz Image" class="image-placeholder">
+            <div class="quiz-label">Geography</div>
+        </div>
+        <div class="quiz-box" onclick="window.location.href='science.html'">
+            <div class="score-circle" id="quiz5-circle"></div>
+            <img src="/pictures/science.jpg" alt="Science Quiz Image" class="image-placeholder">
+            <div class="quiz-label">Science</div>
+        </div>
+    </div>
+
+    <script src="/js/menu.js"></script>
+</body>
+</html>

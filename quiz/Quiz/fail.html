@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fail Page</title>
+    <link rel="stylesheet" href="/css/pass-fail.css">
+    <style>
+        /* Animation for the heading */
+        @keyframes fadeInBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for the emoji */
+        @keyframes shake {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(-10deg);
+            }
+            75% {
+                transform: rotate(10deg);
+            }
+        }
+
+        .result-container h1 {
+            animation: fadeInBounce 1.5s ease-in-out;
+        }
+
+        .emoji {
+            animation: shake 1s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1>Oh No! You Failed!</h1>
+        <img src="/pictures/sad.png" alt="Sad Emoji" class="emoji">
+        <button class="back-to-menu" onclick="window.location.href='menu.html'">Back to Menu</button>
+    </div>
+</body>
+</html>
